@@ -1,25 +1,12 @@
 import java.util.*;
-class hurdle{
+class hurdle1{
     public int maximisePoints(int[] input1,int input2,int[] input3,int input4,int[] input5,int input6,int[] input7,int input8){
-        int height=0;
+        int height=input3[0];
         int sum=0;
-        for (int i = 0; i < input2; i++) {
-            if(i==(input5[0]-1) || i==(input5[1]-1)){
-                 if(height<input7[0])
-                 height+=input3[i];
-                 else 
-                   sum+=input1[i];
-                if(height<input7[1])
-                height+=input3[i];
-                else 
-                   sum+=input1[i];
-            }
-            else{
-              sum+=input1[i];
-            }
+        for (int i = 1; i < input2; i++) {
+           sum+=input1[i];
         }
-        int total=sum-(input1[input5[0]-1])-(input1[input5[1]-1]);
-        return total;
+        return sum;
     }
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
@@ -43,7 +30,7 @@ class hurdle{
         for (int i = 0; i < input8; i++) {
             input7[i]=in.nextInt();
         }
-        hurdle obj=new hurdle();
+        hurdle1 obj=new hurdle1();
         System.out.println(obj.maximisePoints(input1, input2, input3, input4, input5, input6, input7, input8));
         // int height=input3[0];
         
