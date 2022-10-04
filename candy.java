@@ -6,7 +6,7 @@ public class candy {
        int[] input5=new int[input4];
        int sum=0,sum1=0;
        HashMap<Integer,Integer> li=new HashMap<>();
-       for (int i = 0; i < input4; i++) {
+       for (int i = 0; i < input4; i++) {   
            input5[i]=Integer.parseInt(input2[i],2);
            li.put(input5[i], i);
        }
@@ -14,10 +14,11 @@ public class candy {
            if(li.get(15-input5[i]) != null && li.get(15-input5[i])!=i){
             sum=input5[i];
             sum1=15-input5[i];
+            System.out.println(sum+" "+sum1);
            }
        }
        int total=0,maxx=-1;
-       for (int i = 0; i < input4; i++) {
+       for (int i = 0; i < input4; i++) { 
            if(input5[i]==sum){
               total+=input3[i];
            }
