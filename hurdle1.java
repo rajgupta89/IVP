@@ -2,11 +2,25 @@ import java.util.*;
 class hurdle1{
     public int maximisePoints(int[] input1,int input2,int[] input3,int input4,int[] input5,int input6,int[] input7,int input8){
         int height=input3[0];
-        int sum=0;
-        for (int i = 1; i < input2; i++) {
-           sum+=input1[i];
+        HashMap<Integer,Integer> li=new HashMap<>();
+        for (int i = 0; i < input6; i++) {
+            li.put(input5[i], input7[i]);
         }
-        return sum;
+        int coins=0;
+        for (int i = 1; i < input2; i++) {
+            if(li.containsKey(i)){
+                if(height<li.get(i)){
+                    height+=input3[i];
+                }
+                else{
+                    coins+=input1[i];
+                }
+            }
+            else{
+                coins+=input1[i];
+            }
+        }
+        return coins;
     }
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
@@ -31,8 +45,6 @@ class hurdle1{
             input7[i]=in.nextInt();
         }
         hurdle1 obj=new hurdle1();
-        System.out.println(obj.maximisePoints(input1, input2, input3, input4, input5, input6, input7, input8));
-        // int height=input3[0];
-        
+        System.out.println(obj.maximisePoints(input1, input2, input3, input4, input5, input6, input7, input8));        
     }
 }
