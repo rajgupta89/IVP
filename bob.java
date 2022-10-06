@@ -1,5 +1,5 @@
 import java.util.*;
-public class bob_array {
+public class bob {
     public int maximum(int input1,int[] input3){
         int max=0;
         for (int i = 0; i < input1; i++) {
@@ -66,7 +66,7 @@ public class bob_array {
         for (int i = 0; i < input1; i++) {
             input3[i]=in.nextInt();
         }
-        bob_array obj=new bob_array();
+        bob obj=new bob();
         System.out.println(obj.hardness(input1,input2,input3));
     }
 }
